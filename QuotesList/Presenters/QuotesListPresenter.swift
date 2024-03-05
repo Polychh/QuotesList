@@ -50,6 +50,4 @@ final class QuotesListPresenter: QuotesListPresenterProtocol{
     func routeToDetail(category: String) {
         router.detailViewController(categoty: category)
     }
-    
- 
 }
