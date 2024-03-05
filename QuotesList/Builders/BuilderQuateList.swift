@@ -9,6 +9,7 @@ import UIKit
 protocol BuilderVC{
     func buildQuatesListVC(router: RouterQuotesListProtocol) -> UIViewController
     func buildDetailQuoteVC(category: String) -> UIViewController
+    func buildFavotitiesVC() -> UIViewController
 }
 
 final class BuilderQuateList: BuilderVC{
@@ -26,6 +27,11 @@ final class BuilderQuateList: BuilderVC{
         let presenter = QuoteDetailPresenter(category: category, network: networkSetvice)
         presenter.view = vc
         vc.presenter = presenter
+        return vc
+    }
+    
+    func buildFavotitiesVC() -> UIViewController{
+        let vc = FavoritiesViewController()
         return vc
     }
 }

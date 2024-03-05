@@ -23,6 +23,9 @@
 		36E7A75A2B965AB20073E6B4 /* QuoteErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7592B965AB20073E6B4 /* QuoteErrors.swift */; };
 		36E7A75D2B9661A20073E6B4 /* RouterQuotesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A75C2B9661A20073E6B4 /* RouterQuotesList.swift */; };
 		36E7A75F2B9669850073E6B4 /* QuoteDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A75E2B9669850073E6B4 /* QuoteDetailPresenter.swift */; };
+		36E7A7612B974B8B0073E6B4 /* QuoteTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7602B974B8B0073E6B4 /* QuoteTabBarController.swift */; };
+		36E7A7652B974E760073E6B4 /* FavoritiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7642B974E760073E6B4 /* FavoritiesViewController.swift */; };
+		36E7A7672B974FD10073E6B4 /* RouterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		36E7A7592B965AB20073E6B4 /* QuoteErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteErrors.swift; sourceTree = "<group>"; };
 		36E7A75C2B9661A20073E6B4 /* RouterQuotesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterQuotesList.swift; sourceTree = "<group>"; };
 		36E7A75E2B9669850073E6B4 /* QuoteDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailPresenter.swift; sourceTree = "<group>"; };
+		36E7A7602B974B8B0073E6B4 /* QuoteTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTabBarController.swift; sourceTree = "<group>"; };
+		36E7A7642B974E760073E6B4 /* FavoritiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesViewController.swift; sourceTree = "<group>"; };
+		36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterFavorites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,8 @@
 				36E7A74C2B9619280073E6B4 /* Cells */,
 				36E7A7322B9609380073E6B4 /* QuotesListViewController.swift */,
 				36E7A7522B96319C0073E6B4 /* QuoteDetailViewController.swift */,
+				36E7A7602B974B8B0073E6B4 /* QuoteTabBarController.swift */,
+				36E7A7642B974E760073E6B4 /* FavoritiesViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				36E7A75C2B9661A20073E6B4 /* RouterQuotesList.swift */,
+				36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -234,9 +243,12 @@
 				36E7A7582B9659870073E6B4 /* NetworkService.swift in Sources */,
 				36E7A7552B9658FD0073E6B4 /* QuoteModel.swift in Sources */,
 				36E7A7532B96319C0073E6B4 /* QuoteDetailViewController.swift in Sources */,
+				36E7A7612B974B8B0073E6B4 /* QuoteTabBarController.swift in Sources */,
+				36E7A7652B974E760073E6B4 /* FavoritiesViewController.swift in Sources */,
 				36E7A74B2B9613C20073E6B4 /* BuilderQuateList.swift in Sources */,
 				36E7A74E2B9619400073E6B4 /* QuatesListCell.swift in Sources */,
 				36E7A7512B9619FA0073E6B4 /* UIImageView + Ext.swift in Sources */,
+				36E7A7672B974FD10073E6B4 /* RouterFavorites.swift in Sources */,
 				36E7A7332B9609380073E6B4 /* QuotesListViewController.swift in Sources */,
 				36E7A72F2B9609380073E6B4 /* AppDelegate.swift in Sources */,
 				36E7A7462B960AD90073E6B4 /* QuotesListModel.swift in Sources */,
