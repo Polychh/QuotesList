@@ -23,7 +23,6 @@ protocol QuotesListPresenterProtocol{
 final class QuotesListPresenter: QuotesListPresenterProtocol{
     weak var view: QuotesListVCProtocol?
     
-    private let networkService = NetworkService()
     private let router: RouterQuotesListProtocol
     
     var quatesListArray: [Quote] = .init()
@@ -34,7 +33,6 @@ final class QuotesListPresenter: QuotesListPresenterProtocol{
     init(roter: RouterQuotesListProtocol) {
         self.router = roter
         getData()
-        getDataForCategory()
     }
     
     func filterCategories(text: String){
@@ -53,15 +51,5 @@ final class QuotesListPresenter: QuotesListPresenterProtocol{
         router.detailViewController(categoty: category)
     }
     
-    private func getDataForCategory(){
-        networkService.getQuoteByCatery(for: "art") {  [weak self] result in
-            guard let self = self else { return }
-            switch result{
-            case .success(let result):
-                print("Done \(result)")
-            case .failure(let error):
-                print("Network Error \(error.rawValue)")
-            }
-        }
-    }
+ 
 }

@@ -7,12 +7,15 @@
 
 import Foundation
 
-final class NetworkService{
+protocol NetworkServiceProtocol{
+    func getQuoteByCatery(for categoryName: String, completed: @escaping (Result<QuoteByCaregory, QuoteErrors>) -> Void)
+}
+
+final class NetworkService: NetworkServiceProtocol {
     private let baseURL = "https://api.api-ninjas.com/v1/quotes"
     private let decoder = JSONDecoder()
     
     func getQuoteByCatery(for categoryName: String, completed: @escaping (Result<QuoteByCaregory, QuoteErrors>) -> Void) {
-        
         var components = URLComponents(string: baseURL)
         components?.queryItems = [URLQueryItem(name: "category", value: categoryName)]
         
@@ -22,7 +25,7 @@ final class NetworkService{
         }
         
         var request = URLRequest(url: url)
-        request.setValue("YOUR_KEY", forHTTPHeaderField: "X-Api-Key")
+        request.setValue("wEoMBZIWUSBTeyEA+KToxQ==A8hjbmq6cBYaQ73I", forHTTPHeaderField: "X-Api-Key")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let _ = error{

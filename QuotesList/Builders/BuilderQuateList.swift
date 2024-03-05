@@ -21,7 +21,11 @@ final class BuilderQuateList: BuilderVC{
     }
     
     func buildDetailQuoteVC(category: String) -> UIViewController {
-        let vc = QuoteDetailViewController(category: category)
+        let vc = QuoteDetailViewController()
+        let networkSetvice = NetworkService()
+        let presenter = QuoteDetailPresenter(category: category, network: networkSetvice)
+        presenter.view = vc
+        vc.presenter = presenter
         return vc
     }
 }
