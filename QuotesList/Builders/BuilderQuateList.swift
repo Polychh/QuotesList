@@ -15,6 +15,7 @@ protocol BuilderVC{
 final class BuilderQuateList: BuilderVC{
     func buildQuatesListVC(router: RouterQuotesListProtocol) -> UIViewController {
         let vc = QuotesListViewController()
+        vc.title = "Quotes Categories"
         let presenter = QuotesListPresenter(roter: router)
         presenter.view = vc
         vc.presenter = presenter
@@ -23,6 +24,7 @@ final class BuilderQuateList: BuilderVC{
     
     func buildDetailQuoteVC(category: String) -> UIViewController {
         let vc = QuoteDetailViewController()
+        vc.title = "Quote By Category \(category)"
         let networkSetvice = NetworkService()
         let presenter = QuoteDetailPresenter(category: category, network: networkSetvice)
         presenter.view = vc
@@ -32,6 +34,7 @@ final class BuilderQuateList: BuilderVC{
     
     func buildFavotitiesVC() -> UIViewController{
         let vc = FavoritiesViewController()
+        vc.title = "Favorite Quotes"
         let presenter = FavoritiesPresenter()
         presenter.view = vc
         vc.presenter = presenter

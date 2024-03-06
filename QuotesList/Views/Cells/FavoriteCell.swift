@@ -15,6 +15,19 @@ final class FavoriteCell: UITableViewCell {
     private let categoryLabel = UILabel()
     private let stack = UIStackView()
     
+    private let backView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.shadowRadius = 5
+        view.layer.shadowOpacity = 0.8
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1).cgColor
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpUIElements()
@@ -26,15 +39,15 @@ final class FavoriteCell: UITableViewCell {
     }
     
     private func setUpUIElements(){
-        configLabel(label: quoteTextLabel, sizeText: 14, weithText: .regular, lines: 0, alignment: .left)
-        configLabel(label: authorLabel, sizeText: 16, weithText: .semibold, lines: 0, alignment: .center)
-        configLabel(label: categoryLabel, sizeText: 16, weithText: .bold, lines: 0, alignment: .center)
+        configLabel(label: quoteTextLabel, sizeText: 14, weithText: .regular, lines: 0, alignment: .left, color: .black)
+        configLabel(label: authorLabel, sizeText: 16, weithText: .semibold, lines: 0, alignment: .center, color: .black)
+        configLabel(label: categoryLabel, sizeText: 16, weithText: .bold, lines: 0, alignment: .center, color: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
         configStack(stack: stack)
     }
     
-    private func configLabel(label: UILabel, sizeText: CGFloat, weithText: UIFont.Weight, lines: Int, alignment: NSTextAlignment){
+    private func configLabel(label: UILabel, sizeText: CGFloat, weithText: UIFont.Weight, lines: Int, alignment: NSTextAlignment, color: UIColor){
         label.textAlignment = alignment
-        label.textColor = .black
+        label.textColor = color
         label.numberOfLines = lines
         label.font = .systemFont(ofSize: sizeText, weight: weithText)
         label.sizeToFit()
@@ -81,19 +94,27 @@ extension FavoriteCell{
 //MARK: - Constrains
 extension FavoriteCell{
     private func setConstrains(){
+        contentView.addSubview(backView)
         stack.addArrangedSubview(authorLabel)
         stack.addArrangedSubview(categoryLabel)
-        contentView.addSubview(stack)
-        contentView.addSubview(quoteTextLabel)
+        backView.addSubview(stack)
+        backView.addSubview(quoteTextLabel)
         
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
-            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
-            stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
+            
+            backView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            backView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            backView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            backView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
+            
+            stack.topAnchor.constraint(equalTo: backView.topAnchor, constant: 4),
+            stack.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 4),
+            stack.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -2),
             stack.widthAnchor.constraint(equalToConstant: 120),
-            quoteTextLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
-            quoteTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
-            quoteTextLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
+            
+            quoteTextLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 2),
+            quoteTextLabel.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -4),
+            quoteTextLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -2),
             quoteTextLabel.leadingAnchor.constraint(equalTo: stack.trailingAnchor, constant: 2),
         ])
     }

@@ -30,7 +30,7 @@ class FavoritiesViewController: UIViewController {
 private extension FavoritiesViewController{
      func configureTableView() {
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,6 +64,7 @@ extension FavoritiesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.resuseID, for: indexPath) as? FavoriteCell else {return UITableViewCell()}
         let data = presenter.saveQuotes[indexPath.row]
+        cell.selectionStyle = .none
         cell.configCell(quoteText: data.quoteText ?? "", author: data.author ?? "", category: data.category ?? "")
         return cell
     }
