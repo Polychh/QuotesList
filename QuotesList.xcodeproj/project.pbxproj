@@ -28,6 +28,7 @@
 		36E7A7672B974FD10073E6B4 /* RouterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */; };
 		36E7A7772B97892D0073E6B4 /* FavoriteQuotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7752B97892D0073E6B4 /* FavoriteQuotes.xcdatamodeld */; };
 		36E7A77B2B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7792B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift */; };
+		36E7A77D2B97B1420073E6B4 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A77C2B97B1420073E6B4 /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		36E7A7732B97879F0073E6B4 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		36E7A7762B97892D0073E6B4 /* FavoriteQuotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteQuotes.xcdatamodel; sourceTree = "<group>"; };
 		36E7A7792B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotesFavor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		36E7A77C2B97B1420073E6B4 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				36E7A74D2B9619400073E6B4 /* QuatesListCell.swift */,
+				36E7A77C2B97B1420073E6B4 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				36E7A75D2B9661A20073E6B4 /* RouterQuotesList.swift in Sources */,
 				36E7A77B2B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift in Sources */,
 				36E7A7312B9609380073E6B4 /* SceneDelegate.swift in Sources */,
+				36E7A77D2B97B1420073E6B4 /* FavoriteCell.swift in Sources */,
 				36E7A75F2B9669850073E6B4 /* QuoteDetailPresenter.swift in Sources */,
 				36E7A75A2B965AB20073E6B4 /* QuoteErrors.swift in Sources */,
 			);
