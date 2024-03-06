@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol QuoteDetailVCProtocol: AnyObject{
     func activityIndicStop()
@@ -15,11 +16,16 @@ protocol QuoteDetailVCProtocol: AnyObject{
 
 protocol QuoteDetailPresenterProtocol{
     var textArray: QuoteByCaregory { get }
+    var isLoaded: Bool { get }
     func starActivityIndicator()
+    func saveFavorities()
+    func getData()
+   
 }
 
 final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
     var textArray: QuoteByCaregory = .init()
+    var isLoaded: Bool = false
     
     weak var view: QuoteDetailVCProtocol?
     private let category: String
@@ -28,14 +34,29 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
     init(category: String, network: NetworkServiceProtocol) {
         self.category = category
         self.networkService = network
-        getDataForCategory(category: category)
     }
     
     func starActivityIndicator() {
-        view?.activityIndicStart()
+        if !isLoaded{
+            view?.activityIndicStart()
+        }
+    }
+    
+    func saveFavorities(){
+        let data = textArray[0]
+        StoreManager.shared.createFavoriteQuote(category: data.category, author: data.author, quoteText: data.quote)
+    }
+    
+    func getData(){
+        if textArray.isEmpty{
+            getDataForCategory(category: category)
+        } else {
+            isLoaded = true
+        }
     }
     
     private func getDataForCategory(category: String){
+        isLoaded = false
         networkService.getQuoteByCatery(for: category) {  [weak self] result in
             guard let self = self else { return }
             switch result{
@@ -44,6 +65,7 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
                 print("Done \(result)")
                 view?.activityIndicStop()
                 view?.addTextToLabel()
+                isLoaded = true
             case .failure(let error):
                 print("Network Error \(error.rawValue)")
             }

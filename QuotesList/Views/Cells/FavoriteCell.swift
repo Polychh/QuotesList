@@ -26,14 +26,14 @@ final class FavoriteCell: UITableViewCell {
     }
     
     private func setUpUIElements(){
-        configLabel(label: quoteTextLabel, sizeText: 14, weithText: .regular, lines: 1)
-        configLabel(label: authorLabel, sizeText: 16, weithText: .semibold, lines: 1)
-        configLabel(label: categoryLabel, sizeText: 16, weithText: .bold, lines: 1)
+        configLabel(label: quoteTextLabel, sizeText: 14, weithText: .regular, lines: 0, alignment: .left)
+        configLabel(label: authorLabel, sizeText: 16, weithText: .semibold, lines: 0, alignment: .center)
+        configLabel(label: categoryLabel, sizeText: 16, weithText: .bold, lines: 0, alignment: .center)
         configStack(stack: stack)
     }
     
-    private func configLabel(label: UILabel, sizeText: CGFloat, weithText: UIFont.Weight, lines: Int){
-        label.textAlignment = .left
+    private func configLabel(label: UILabel, sizeText: CGFloat, weithText: UIFont.Weight, lines: Int, alignment: NSTextAlignment){
+        label.textAlignment = alignment
         label.textColor = .black
         label.numberOfLines = lines
         label.font = .systemFont(ofSize: sizeText, weight: weithText)
@@ -42,10 +42,10 @@ final class FavoriteCell: UITableViewCell {
     }
     
     private func configStack(stack: UIStackView){
-        stack.backgroundColor = .blue
         stack.alignment = .center
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .equalSpacing
         stack.spacing = 5
     }
     
@@ -74,27 +74,25 @@ extension FavoriteCell{
     }
     
     private func configCategoryLabel(category: String){
-        categoryLabel.text = category
+        categoryLabel.text = "From: " + category.capitalized
     }
 }
 
 //MARK: - Constrains
 extension FavoriteCell{
     private func setConstrains(){
-        contentView.backgroundColor = .red
-        quoteTextLabel.backgroundColor = .yellow
         stack.addArrangedSubview(authorLabel)
         stack.addArrangedSubview(categoryLabel)
         contentView.addSubview(stack)
         contentView.addSubview(quoteTextLabel)
         
         NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
-            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 2),
+            stack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
+            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
             stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
-            stack.widthAnchor.constraint(equalToConstant: 100),
+            stack.widthAnchor.constraint(equalToConstant: 120),
             quoteTextLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
-            quoteTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -2),
+            quoteTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
             quoteTextLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
             quoteTextLabel.leadingAnchor.constraint(equalTo: stack.trailingAnchor, constant: 2),
         ])

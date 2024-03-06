@@ -9,9 +9,8 @@ import UIKit
 import CoreData
 
 final class StoreManager{
-    private static let shared = StoreManager()
-    private let containerName: String = "FavoriteQuotes"
-    private let entityName: String = "FavorQ"
+    static let shared = StoreManager()
+    private let entityName: String = "SavesQuote"
     
     private init(){}
     
@@ -23,33 +22,35 @@ final class StoreManager{
         appDelagate.persistentContainer.viewContext
     }
     
-    func createFavoriteQuote(id: Int,category: String, author: String, quoteText: String){
+    func createFavoriteQuote(category: String, author: String, quoteText: String){
         guard let quoteEntityDescription = NSEntityDescription.entity(forEntityName: entityName, in: context) else { return }
-        let quote = FavorQ(entity: quoteEntityDescription, insertInto: context)
-        quote.id = Int16(id)
+        let quote = SavesQuote(entity: quoteEntityDescription, insertInto: context)
         quote.category = category
         quote.author = author
-        quote.qupteText = quoteText
+        quote.quoteText = quoteText
+        print("save quote \(quote)")
         appDelagate.saveContext()
     }
     
-    func fetchQuotes() -> [FavorQ]{
-        let fetchRequest = NSFetchRequest<FavorQ>(entityName: entityName)
+    func fetchQuotes() -> [SavesQuote]{
+        let fetchRequest = NSFetchRequest<SavesQuote>(entityName: entityName)
         do{
             let quotes = (try? context.fetch(fetchRequest)) ?? []
+//            for quote in quotes{
+//                print("all quotes \(quote.author)")
+//            }
+            
             return quotes
         }
-       
-        //        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName) //получит все объекты типа "FavorQ"
+    }
+    //        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName) //получит все объекты типа "FavorQ"
 //
 //        do{
 //            return (try? context.fetch(request) as? [FavorQ]) ?? []
 //        }
-        
-    }
     
     func deleteAllQuotes(){
-        let fetchRequest = NSFetchRequest<FavorQ>(entityName: entityName)
+        let fetchRequest = NSFetchRequest<SavesQuote>(entityName: entityName)
         do{
             let quotes = try? context.fetch(fetchRequest)
             quotes?.forEach{ context.delete($0)}
@@ -57,11 +58,11 @@ final class StoreManager{
         appDelagate.saveContext()
     }
     
-    func deleteOneQuotes(with index: Int){
-        let fetchRequest = NSFetchRequest<FavorQ>(entityName: entityName)
+    func deleteOneQuotes(with quoteText: String){
+        let fetchRequest = NSFetchRequest<SavesQuote>(entityName: entityName)
         do{
             guard let quotes = try? context.fetch(fetchRequest),
-                  let quote = quotes.first(where: { $0.id == Int16(index)}) else { return }
+                  let quote = quotes.first(where: { $0.quoteText == quoteText}) else { return }
             context.delete(quote)
         }
         appDelagate.saveContext()

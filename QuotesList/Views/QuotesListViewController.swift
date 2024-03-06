@@ -25,6 +25,7 @@ final class QuotesListViewController: UIViewController {
         setUpSearchController()
         setUpSearchControllerAppearance()
         setConstrains()
+        StoreManager.shared.fetchQuotes()
     }
 }
 

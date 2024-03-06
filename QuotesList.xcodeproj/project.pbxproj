@@ -26,9 +26,10 @@
 		36E7A7612B974B8B0073E6B4 /* QuoteTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7602B974B8B0073E6B4 /* QuoteTabBarController.swift */; };
 		36E7A7652B974E760073E6B4 /* FavoritiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7642B974E760073E6B4 /* FavoritiesViewController.swift */; };
 		36E7A7672B974FD10073E6B4 /* RouterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */; };
-		36E7A7772B97892D0073E6B4 /* FavoriteQuotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7752B97892D0073E6B4 /* FavoriteQuotes.xcdatamodeld */; };
-		36E7A77B2B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7792B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift */; };
 		36E7A77D2B97B1420073E6B4 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A77C2B97B1420073E6B4 /* FavoriteCell.swift */; };
+		36E7A77E2B987ADA0073E6B4 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7732B97879F0073E6B4 /* StoreManager.swift */; };
+		36E7A7802B987EC80073E6B4 /* FavoritiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A77F2B987EC80073E6B4 /* FavoritiesPresenter.swift */; };
+		36E7A7852B988B7B0073E6B4 /* FavorQuotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7812B9888630073E6B4 /* FavorQuotes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +55,9 @@
 		36E7A7642B974E760073E6B4 /* FavoritiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesViewController.swift; sourceTree = "<group>"; };
 		36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterFavorites.swift; sourceTree = "<group>"; };
 		36E7A7732B97879F0073E6B4 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		36E7A7762B97892D0073E6B4 /* FavoriteQuotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteQuotes.xcdatamodel; sourceTree = "<group>"; };
-		36E7A7792B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuotesFavor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		36E7A77C2B97B1420073E6B4 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		36E7A77F2B987EC80073E6B4 /* FavoritiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritiesPresenter.swift; sourceTree = "<group>"; };
+		36E7A7822B9888630073E6B4 /* FavorQuotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavorQuotes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +111,7 @@
 			children = (
 				36E7A7452B960AD90073E6B4 /* QuotesListModel.swift */,
 				36E7A7542B9658FD0073E6B4 /* QuoteModel.swift */,
-				36E7A7792B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift */,
-				36E7A7752B97892D0073E6B4 /* FavoriteQuotes.xcdatamodeld */,
+				36E7A7812B9888630073E6B4 /* FavorQuotes.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +133,7 @@
 			children = (
 				36E7A7472B9610610073E6B4 /* QuotesListPresenter.swift */,
 				36E7A75E2B9669850073E6B4 /* QuoteDetailPresenter.swift */,
+				36E7A77F2B987EC80073E6B4 /* FavoritiesPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -255,19 +256,20 @@
 				36E7A7552B9658FD0073E6B4 /* QuoteModel.swift in Sources */,
 				36E7A7532B96319C0073E6B4 /* QuoteDetailViewController.swift in Sources */,
 				36E7A7612B974B8B0073E6B4 /* QuoteTabBarController.swift in Sources */,
+				36E7A7852B988B7B0073E6B4 /* FavorQuotes.xcdatamodeld in Sources */,
 				36E7A7652B974E760073E6B4 /* FavoritiesViewController.swift in Sources */,
 				36E7A74B2B9613C20073E6B4 /* BuilderQuateList.swift in Sources */,
 				36E7A74E2B9619400073E6B4 /* QuatesListCell.swift in Sources */,
 				36E7A7512B9619FA0073E6B4 /* UIImageView + Ext.swift in Sources */,
 				36E7A7672B974FD10073E6B4 /* RouterFavorites.swift in Sources */,
 				36E7A7332B9609380073E6B4 /* QuotesListViewController.swift in Sources */,
-				36E7A7772B97892D0073E6B4 /* FavoriteQuotes.xcdatamodeld in Sources */,
 				36E7A72F2B9609380073E6B4 /* AppDelegate.swift in Sources */,
 				36E7A7462B960AD90073E6B4 /* QuotesListModel.swift in Sources */,
 				36E7A7482B9610610073E6B4 /* QuotesListPresenter.swift in Sources */,
 				36E7A75D2B9661A20073E6B4 /* RouterQuotesList.swift in Sources */,
-				36E7A77B2B97905B0073E6B4 /* QuotesFavor+CoreDataProperties.swift in Sources */,
+				36E7A77E2B987ADA0073E6B4 /* StoreManager.swift in Sources */,
 				36E7A7312B9609380073E6B4 /* SceneDelegate.swift in Sources */,
+				36E7A7802B987EC80073E6B4 /* FavoritiesPresenter.swift in Sources */,
 				36E7A77D2B97B1420073E6B4 /* FavoriteCell.swift in Sources */,
 				36E7A75F2B9669850073E6B4 /* QuoteDetailPresenter.swift in Sources */,
 				36E7A75A2B965AB20073E6B4 /* QuoteErrors.swift in Sources */,
@@ -483,13 +485,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		36E7A7752B97892D0073E6B4 /* FavoriteQuotes.xcdatamodeld */ = {
+		36E7A7812B9888630073E6B4 /* FavorQuotes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				36E7A7762B97892D0073E6B4 /* FavoriteQuotes.xcdatamodel */,
+				36E7A7822B9888630073E6B4 /* FavorQuotes.xcdatamodel */,
 			);
-			currentVersion = 36E7A7762B97892D0073E6B4 /* FavoriteQuotes.xcdatamodel */;
-			path = FavoriteQuotes.xcdatamodeld;
+			currentVersion = 36E7A7822B9888630073E6B4 /* FavorQuotes.xcdatamodel */;
+			path = FavorQuotes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -32,6 +32,9 @@ final class BuilderQuateList: BuilderVC{
     
     func buildFavotitiesVC() -> UIViewController{
         let vc = FavoritiesViewController()
+        let presenter = FavoritiesPresenter()
+        presenter.view = vc
+        vc.presenter = presenter
         return vc
     }
 }

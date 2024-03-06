@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data PersistentContainer
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "FavoriteQuotes")
+        let container = NSPersistentContainer(name: "FavorQuotes")
         container.loadPersistentStores(completionHandler: { (descriptionStore, errorStore) in
             if let error = errorStore as NSError? {
                 fatalError("Store error \(error), \(error.userInfo)")
