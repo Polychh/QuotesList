@@ -25,7 +25,7 @@ final class NetworkService: NetworkServiceProtocol {
         }
         
         var request = URLRequest(url: url)
-        request.setValue("wEoMBZIWUSBTeyEA+KToxQ==A8hjbmq6cBYaQ73I", forHTTPHeaderField: "X-Api-Key")
+        request.setValue("YOUR_KEY", forHTTPHeaderField: "X-Api-Key")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let _ = error{

@@ -119,10 +119,10 @@
 		36E7A7432B960A620073E6B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36E7A7882B98ACE80073E6B4 /* TabBar */,
 				36E7A74C2B9619280073E6B4 /* Cells */,
 				36E7A7322B9609380073E6B4 /* QuotesListViewController.swift */,
 				36E7A7522B96319C0073E6B4 /* QuoteDetailViewController.swift */,
-				36E7A7602B974B8B0073E6B4 /* QuoteTabBarController.swift */,
 				36E7A7642B974E760073E6B4 /* FavoritiesViewController.swift */,
 			);
 			path = Views;
@@ -180,6 +180,14 @@
 				36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		36E7A7882B98ACE80073E6B4 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				36E7A7602B974B8B0073E6B4 /* QuoteTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

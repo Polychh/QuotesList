@@ -15,6 +15,8 @@ class QuoteDetailViewController: UIViewController {
     private let quoteLabel = UILabel()
     private let authorLabel = UILabel()
     private let favoriteButton = UIButton()
+    private let backView = UIView()
+    private let stack = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,8 @@ private extension QuoteDetailViewController {
         configLabel(label: authorLabel, sizeText: 20, weithText: .semibold, lines: 1, color: .black)
         configLabel(label: quoteLabel, sizeText: 16, weithText: .regular, lines: 0, color: .black)
         configButton(button: favoriteButton, symbol: "star.fill")
+        configView(view: backView, radius: 15, isHidden: true)
+        configStack(stack: stack)
     }
     
     func addActionButtons(){
@@ -56,6 +60,13 @@ private extension QuoteDetailViewController {
         button.tintColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
     }
     
+    func configView(view: UIView, radius: CGFloat, isHidden: Bool){
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 0.5)
+        view.isHidden = isHidden
+        view.layer.cornerRadius = radius
+    }
+    
     func configLabel(label: UILabel, sizeText: CGFloat, weithText: UIFont.Weight, lines: Int, color: UIColor){
         label.textAlignment = .center
         label.textColor = color
@@ -65,8 +76,15 @@ private extension QuoteDetailViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    private func configStack(stack: UIStackView){
+        stack.alignment = .center
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .equalSpacing
+        stack.spacing = 5
+    }
+    
     @objc func favoriteTapped(){
-        print("favoriteTapped")
         presenter.saveFavorities()
     }
 }
@@ -74,37 +92,44 @@ private extension QuoteDetailViewController {
 //MARK: - SetUp Constrains
 private extension QuoteDetailViewController {
     func setConstraints() {
+        view.addSubview(backView)
         view.addSubview(activityIndicator)
-        view.addSubview(categoryLabel)
-        view.addSubview(authorLabel)
-        view.addSubview(quoteLabel)
         view.addSubview(favoriteButton)
+        backView.addSubview(stack)
+        backView.addSubview(favoriteButton)
+        stack.addArrangedSubview(categoryLabel)
+        stack.addArrangedSubview(authorLabel)
+        stack.addArrangedSubview(quoteLabel)
         
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            categoryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            categoryLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            backView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            backView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            backView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            backView.bottomAnchor.constraint(equalTo: stack.bottomAnchor, constant: 5),
             
-            favoriteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            favoriteButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            favoriteButton.widthAnchor.constraint(equalToConstant: 50),
-            favoriteButton.heightAnchor.constraint(equalToConstant: 50),
+            favoriteButton.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -5),
+            favoriteButton.topAnchor.constraint(equalTo: backView.topAnchor, constant: 5),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 30),
+            favoriteButton.heightAnchor.constraint(equalToConstant: 30),
             
-            authorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            authorLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 16),
-            
-            quoteLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 16),
-            quoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            quoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            stack.trailingAnchor.constraint(equalTo: backView.trailingAnchor, constant: -5),
+            stack.topAnchor.constraint(equalTo: backView.topAnchor, constant: 5),
+            stack.leadingAnchor.constraint(equalTo: backView.leadingAnchor, constant: 5),
+            stack.bottomAnchor.constraint(equalTo: backView.bottomAnchor, constant: -5),
         ])
     }
 }
-
-
 //MARK: - Set QuotesListVCProtocol
 extension QuoteDetailViewController: QuoteDetailVCProtocol{
+    func hideBackView() {
+        DispatchQueue.main.async {
+            self.backView.isHidden = false
+        }
+    }
+    
     func addTextToLabel() {
         DispatchQueue.main.async {
             self.authorLabel.text = self.presenter.textArray[0].author

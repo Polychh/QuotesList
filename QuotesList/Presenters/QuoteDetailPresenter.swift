@@ -12,6 +12,7 @@ protocol QuoteDetailVCProtocol: AnyObject{
     func activityIndicStop()
     func activityIndicStart()
     func addTextToLabel()
+    func hideBackView()
 }
 
 protocol QuoteDetailPresenterProtocol{
@@ -51,6 +52,7 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
         if textArray.isEmpty{
             getDataForCategory(category: category)
         } else {
+            view?.hideBackView()
             isLoaded = true
         }
     }
@@ -64,6 +66,7 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
                 textArray = result
                 print("Done \(result)")
                 view?.activityIndicStop()
+                view?.hideBackView()
                 view?.addTextToLabel()
                 isLoaded = true
             case .failure(let error):
