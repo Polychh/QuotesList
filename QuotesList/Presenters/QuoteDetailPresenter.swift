@@ -59,7 +59,8 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
     
     private func getDataForCategory(category: String){
         isLoaded = false
-        networkService.getQuoteByCatery(for: category) {  [weak self] result in
+        let request = CategoryQuoteRequest(category: category)
+        networkService.getQuoteByCatery(request) { [weak self] result in
             guard let self = self else { return }
             switch result{
             case .success(let result):
