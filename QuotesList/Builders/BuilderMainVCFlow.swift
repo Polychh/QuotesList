@@ -13,21 +13,20 @@ protocol BuilderMainVCFlowProtocol{
 
 final class BuilderMainVCFlow: BuilderMainVCFlowProtocol{
     func buildQuatesListVC(router: RouterQuotesListProtocol) -> UIViewController {
-        let vc = QuotesListViewController()
-        vc.title = "Quotes Categories"
         let presenter = QuotesListPresenter(roter: router)
+        let vc = QuotesListViewController(presenter: presenter)
+        vc.title = "Quotes Categories"
         presenter.view = vc
-        vc.presenter = presenter
         return vc
     }
     
     func buildDetailQuoteVC(category: String) -> UIViewController {
-        let vc = QuoteDetailViewController()
-        vc.title = "Quote By Category \(category)"
+        let storeManager = StoreManager()
         let networkSetvice = NetworkService()
-        let presenter = QuoteDetailPresenter(category: category, network: networkSetvice)
+        let presenter = QuoteDetailPresenter(category: category, network: networkSetvice, storeManager: storeManager)
+        let vc = QuoteDetailViewController(presenter: presenter)
+        vc.title = "Quote By Category \(category)"
         presenter.view = vc
-        vc.presenter = presenter
         return vc
     }
 }

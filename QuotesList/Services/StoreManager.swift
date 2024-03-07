@@ -8,11 +8,18 @@
 import UIKit
 import CoreData
 
-final class StoreManager{
-    static let shared = StoreManager()
+protocol StoreManagerProtocol{
+    func createFavoriteQuote(category: String, author: String, quoteText: String)
+    func fetchQuotes() -> [SavesQuote]
+    func deleteAllQuotes()
+    func deleteOneQuotes(with quoteText: String)
+}
+
+final class StoreManager: StoreManagerProtocol {
+    //static let shared = StoreManager()
     private let entityName: String = "SavesQuote"
     
-    private init(){}
+//    private init(){}
     
     private var appDelagate: AppDelegate{
         UIApplication.shared.delegate as! AppDelegate
@@ -35,19 +42,10 @@ final class StoreManager{
     func fetchQuotes() -> [SavesQuote]{
         let fetchRequest = NSFetchRequest<SavesQuote>(entityName: entityName)
         do{
-            let quotes = (try? context.fetch(fetchRequest)) ?? []
-//            for quote in quotes{
-//                print("all quotes \(quote.author)")
-//            }
-            
+            let quotes = (try? context.fetch(fetchRequest)) ?? []            
             return quotes
         }
     }
-    //        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName) //получит все объекты типа "FavorQ"
-//
-//        do{
-//            return (try? context.fetch(request) as? [FavorQ]) ?? []
-//        }
     
     func deleteAllQuotes(){
         let fetchRequest = NSFetchRequest<SavesQuote>(entityName: entityName)

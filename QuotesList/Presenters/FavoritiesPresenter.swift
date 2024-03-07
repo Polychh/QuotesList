@@ -22,21 +22,26 @@ protocol FavoritiesPresenterProtocol{
 final class FavoritiesPresenter: FavoritiesPresenterProtocol{
     var saveQuotes: [SavesQuote] = .init()
     weak var view: FavoritiesVCProtocol?
+    private let storeManager: StoreManagerProtocol
+    
+    init(storeManager: StoreManagerProtocol) {
+        self.storeManager = storeManager
+    }
     
     func getSaveQuotes(){
-        saveQuotes = StoreManager.shared.fetchQuotes()
+        saveQuotes = storeManager.fetchQuotes()
         view?.reloadTableView()
     }
     
     func deleteAllFavs() {
-        StoreManager.shared.deleteAllQuotes()
-        saveQuotes = StoreManager.shared.fetchQuotes()
+        storeManager.deleteAllQuotes()
+        saveQuotes = storeManager.fetchQuotes()
         view?.reloadTableView()
     }
     
     func deleteOneItem(textQuote: String){
-        StoreManager.shared.deleteOneQuotes(with: textQuote)
-        saveQuotes = StoreManager.shared.fetchQuotes()
+        storeManager.deleteOneQuotes(with: textQuote)
+        saveQuotes = storeManager.fetchQuotes()
         view?.reloadTableView()
     }
 }

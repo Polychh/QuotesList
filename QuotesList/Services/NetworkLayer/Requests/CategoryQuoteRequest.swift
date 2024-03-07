@@ -23,7 +23,7 @@ struct CategoryQuoteRequest: QuotenRequestProtocol{
     
     var headers: [String : String]?{
         let headers = [
-            "X-Api-Key": "r4S559QzBcDAJogfuG9bBUVFS0iCJ3PuoDPvFwvM",
+            "X-Api-Key": "UUGzMqF7CB21vbyipMvSahLLw0vXjhsKJBaKNVCd",
         ]
         return headers
     }

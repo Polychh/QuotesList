@@ -31,10 +31,12 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
     weak var view: QuoteDetailVCProtocol?
     private let category: String
     private let networkService: NetworkServiceProtocol
+    private let storeManager: StoreManagerProtocol
     
-    init(category: String, network: NetworkServiceProtocol) {
+    init(category: String, network: NetworkServiceProtocol, storeManager: StoreManagerProtocol) {
         self.category = category
         self.networkService = network
+        self.storeManager = storeManager
     }
     
     func starActivityIndicator() {
@@ -45,7 +47,7 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
     
     func saveFavorities(){
         let data = textArray[0]
-        StoreManager.shared.createFavoriteQuote(category: data.category, author: data.author, quoteText: data.quote)
+        storeManager.createFavoriteQuote(category: data.category, author: data.author, quoteText: data.quote)
     }
     
     func getData(){

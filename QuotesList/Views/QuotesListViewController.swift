@@ -8,7 +8,7 @@
 import UIKit
 
 final class QuotesListViewController: UIViewController {
-    var presenter: QuotesListPresenter!
+    private let presenter: QuotesListPresenter
     
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -18,14 +18,22 @@ final class QuotesListViewController: UIViewController {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return view
     }()
-
+    
+    init(presenter: QuotesListPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         setUpSearchController()
         setUpSearchControllerAppearance()
         setConstrains()
-        StoreManager.shared.fetchQuotes()
     }
 }
 
@@ -38,7 +46,7 @@ private extension QuotesListViewController{
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(QuatesListCell.self, forCellWithReuseIdentifier: QuatesListCell.resuseID) // register cell
+        collectionView.register(QuatesListCell.self, forCellWithReuseIdentifier: QuatesListCell.resuseID)
     }
 }
 
@@ -133,7 +141,7 @@ extension QuotesListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 16, left: 16, bottom: 0, right: 16)
+        .init(top: 8, left: 16, bottom: 8, right: 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -12,11 +12,11 @@ protocol BuilderFavVCFlowProtocol{
 
 final class BuilderFavVCFlow: BuilderFavVCFlowProtocol{
     func buildFavotitiesVC() -> UIViewController{
-        let vc = FavoritiesViewController()
+        let storeManager = StoreManager()
+        let presenter = FavoritiesPresenter(storeManager: storeManager)
+        let vc = FavoritiesViewController(presenter: presenter)
         vc.title = "Favorite Quotes"
-        let presenter = FavoritiesPresenter()
         presenter.view = vc
-        vc.presenter = presenter
         return vc
     }
 }

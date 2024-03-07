@@ -8,7 +8,7 @@
 import UIKit
 
 class QuoteDetailViewController: UIViewController {
-    var presenter: QuoteDetailPresenter!
+    private let presenter: QuoteDetailPresenter
     
     private let activityIndicator = UIActivityIndicatorView(frame: .zero)
     private let categoryLabel = UILabel()
@@ -17,6 +17,15 @@ class QuoteDetailViewController: UIViewController {
     private let favoriteButton = UIButton()
     private let backView = UIView()
     private let stack = UIStackView()
+    
+    init(presenter: QuoteDetailPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
