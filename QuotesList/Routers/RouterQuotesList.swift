@@ -8,10 +8,10 @@
 import UIKit
 protocol RouterProtocolMain{
     var navigationController: UINavigationController { get }
-    var builder: BuilderVC { get }
 }
 
 protocol RouterQuotesListProtocol: RouterProtocolMain{
+    var builder: BuilderMainVCFlowProtocol { get }
     func categoryViewController()
     func detailViewController(categoty: String)
 }
@@ -20,8 +20,8 @@ final class RouterQuotesList: RouterQuotesListProtocol{
     
     var navigationController: UINavigationController
     
-    var builder: BuilderVC
-    init(navigationController: UINavigationController, builder: BuilderVC) {
+    var builder: BuilderMainVCFlowProtocol
+    init(navigationController: UINavigationController, builder: BuilderMainVCFlowProtocol) {
         self.navigationController = navigationController
         self.builder = builder
     }

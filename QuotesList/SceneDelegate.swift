@@ -14,11 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-//        let navController = UINavigationController()
-//        let builder = BuilderQuateList()
-//        let router = RouterQuotesList(navigationController: navController, builder: builder)
-//        router.categoryViewController()
-        let tabBarController = QuoteTabBarController()
+        let builderTabBarFlow = BuilderTabBarQuote()
+        let tabBarController = QuoteTabBarController(builderTabFlow: builderTabBarFlow)
         window.rootViewController = tabBarController
         self.window = window
         window.makeKeyAndVisible()

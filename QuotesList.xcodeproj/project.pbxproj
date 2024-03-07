@@ -14,7 +14,7 @@
 		36E7A73B2B96093F0073E6B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36E7A7392B96093F0073E6B4 /* LaunchScreen.storyboard */; };
 		36E7A7462B960AD90073E6B4 /* QuotesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7452B960AD90073E6B4 /* QuotesListModel.swift */; };
 		36E7A7482B9610610073E6B4 /* QuotesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7472B9610610073E6B4 /* QuotesListPresenter.swift */; };
-		36E7A74B2B9613C20073E6B4 /* BuilderQuateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A74A2B9613C20073E6B4 /* BuilderQuateList.swift */; };
+		36E7A74B2B9613C20073E6B4 /* BuilderMainVCFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A74A2B9613C20073E6B4 /* BuilderMainVCFlow.swift */; };
 		36E7A74E2B9619400073E6B4 /* QuatesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A74D2B9619400073E6B4 /* QuatesListCell.swift */; };
 		36E7A7512B9619FA0073E6B4 /* UIImageView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7502B9619FA0073E6B4 /* UIImageView + Ext.swift */; };
 		36E7A7532B96319C0073E6B4 /* QuoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7522B96319C0073E6B4 /* QuoteDetailViewController.swift */; };
@@ -32,6 +32,8 @@
 		36E7A7852B988B7B0073E6B4 /* FavorQuotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7812B9888630073E6B4 /* FavorQuotes.xcdatamodeld */; };
 		36E7A78A2B99B0380073E6B4 /* QuoteRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7892B99B0380073E6B4 /* QuoteRequestProtocol.swift */; };
 		36E7A78D2B99B0C70073E6B4 /* CategoryQuoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A78C2B99B0C70073E6B4 /* CategoryQuoteRequest.swift */; };
+		36E7A7902B99B99F0073E6B4 /* BuilderTabBarQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A78F2B99B99F0073E6B4 /* BuilderTabBarQuote.swift */; };
+		36E7A7922B99BED90073E6B4 /* BuilderFavVCFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7912B99BED90073E6B4 /* BuilderFavVCFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +46,7 @@
 		36E7A73C2B96093F0073E6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36E7A7452B960AD90073E6B4 /* QuotesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListModel.swift; sourceTree = "<group>"; };
 		36E7A7472B9610610073E6B4 /* QuotesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListPresenter.swift; sourceTree = "<group>"; };
-		36E7A74A2B9613C20073E6B4 /* BuilderQuateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderQuateList.swift; sourceTree = "<group>"; };
+		36E7A74A2B9613C20073E6B4 /* BuilderMainVCFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderMainVCFlow.swift; sourceTree = "<group>"; };
 		36E7A74D2B9619400073E6B4 /* QuatesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuatesListCell.swift; sourceTree = "<group>"; };
 		36E7A7502B9619FA0073E6B4 /* UIImageView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Ext.swift"; sourceTree = "<group>"; };
 		36E7A7522B96319C0073E6B4 /* QuoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		36E7A7822B9888630073E6B4 /* FavorQuotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavorQuotes.xcdatamodel; sourceTree = "<group>"; };
 		36E7A7892B99B0380073E6B4 /* QuoteRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRequestProtocol.swift; sourceTree = "<group>"; };
 		36E7A78C2B99B0C70073E6B4 /* CategoryQuoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuoteRequest.swift; sourceTree = "<group>"; };
+		36E7A78F2B99B99F0073E6B4 /* BuilderTabBarQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTabBarQuote.swift; sourceTree = "<group>"; };
+		36E7A7912B99BED90073E6B4 /* BuilderFavVCFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderFavVCFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +149,9 @@
 		36E7A7492B9613AC0073E6B4 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
-				36E7A74A2B9613C20073E6B4 /* BuilderQuateList.swift */,
+				36E7A78F2B99B99F0073E6B4 /* BuilderTabBarQuote.swift */,
+				36E7A74A2B9613C20073E6B4 /* BuilderMainVCFlow.swift */,
+				36E7A7912B99BED90073E6B4 /* BuilderFavVCFlow.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -286,10 +292,11 @@
 				36E7A7552B9658FD0073E6B4 /* QuoteModel.swift in Sources */,
 				36E7A7532B96319C0073E6B4 /* QuoteDetailViewController.swift in Sources */,
 				36E7A7612B974B8B0073E6B4 /* QuoteTabBarController.swift in Sources */,
+				36E7A7902B99B99F0073E6B4 /* BuilderTabBarQuote.swift in Sources */,
 				36E7A78D2B99B0C70073E6B4 /* CategoryQuoteRequest.swift in Sources */,
 				36E7A7852B988B7B0073E6B4 /* FavorQuotes.xcdatamodeld in Sources */,
 				36E7A7652B974E760073E6B4 /* FavoritiesViewController.swift in Sources */,
-				36E7A74B2B9613C20073E6B4 /* BuilderQuateList.swift in Sources */,
+				36E7A74B2B9613C20073E6B4 /* BuilderMainVCFlow.swift in Sources */,
 				36E7A74E2B9619400073E6B4 /* QuatesListCell.swift in Sources */,
 				36E7A78A2B99B0380073E6B4 /* QuoteRequestProtocol.swift in Sources */,
 				36E7A7512B9619FA0073E6B4 /* UIImageView + Ext.swift in Sources */,
@@ -300,6 +307,7 @@
 				36E7A7482B9610610073E6B4 /* QuotesListPresenter.swift in Sources */,
 				36E7A75D2B9661A20073E6B4 /* RouterQuotesList.swift in Sources */,
 				36E7A77E2B987ADA0073E6B4 /* StoreManager.swift in Sources */,
+				36E7A7922B99BED90073E6B4 /* BuilderFavVCFlow.swift in Sources */,
 				36E7A7312B9609380073E6B4 /* SceneDelegate.swift in Sources */,
 				36E7A7802B987EC80073E6B4 /* FavoritiesPresenter.swift in Sources */,
 				36E7A77D2B97B1420073E6B4 /* FavoriteCell.swift in Sources */,

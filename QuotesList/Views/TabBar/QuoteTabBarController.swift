@@ -8,20 +8,28 @@
 import UIKit
 
 final class QuoteTabBarController: UITabBarController {
-
+    
+    let builderTabFlow: BulderTabBarProtocol
+    
+    init(builderTabFlow: BulderTabBarProtocol) {
+        self.builderTabFlow = builderTabFlow
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBarAppearence()
-        generateTabBar()
+        generateTabBar(builderTabBarFlow: builderTabFlow)
     }
     
-    private func generateTabBar(){
-        let builder = BuilderQuateList()
-        let mainRouter = RouterQuotesList(navigationController: generateVC(title: "Main", image: UIImage(systemName: "house")), builder: builder)
-        mainRouter.categoryViewController()
-        let favoritesRouter = RouterFavorites(navigationController: generateVC(title: "Favories", image: UIImage(systemName: "star.fill")), builder: builder)
-        favoritesRouter.createFavoriteVC()
-        self.setViewControllers([mainRouter.navigationController, favoritesRouter.navigationController], animated: true)
+    private func generateTabBar(builderTabBarFlow: BulderTabBarProtocol){
+        let mainTab = builderTabBarFlow.buildMainVCFlow(nav: generateVC(title: "Main", image: UIImage(systemName: "house")))
+        let favorTab = builderTabBarFlow.buildFavoriteVCFlow(nav: generateVC(title: "Favories", image: UIImage(systemName: "star.fill")))
+        self.setViewControllers([mainTab, favorTab], animated: true)
     }
     
     private func generateVC( title: String, image: UIImage?) -> UINavigationController{
