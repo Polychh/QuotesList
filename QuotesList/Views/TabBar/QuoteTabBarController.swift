@@ -29,7 +29,8 @@ final class QuoteTabBarController: UITabBarController {
     private func generateTabBar(builderTabBarFlow: BulderTabBarProtocol){
         let mainTab = builderTabBarFlow.buildMainVCFlow(nav: generateVC(title: "Main", image: UIImage(systemName: "house")))
         let favorTab = builderTabBarFlow.buildFavoriteVCFlow(nav: generateVC(title: "Favories", image: UIImage(systemName: "star.fill")))
-        self.setViewControllers([mainTab, favorTab], animated: true)
+        let jokeTab = builderTabBarFlow.buildJokeVCFlow(nav: generateVC(title: "Joke", image: UIImage(systemName: "lightbulb.fill")))
+        self.setViewControllers([mainTab, favorTab, jokeTab], animated: true)
     }
     
     private func generateVC( title: String, image: UIImage?) -> UINavigationController{

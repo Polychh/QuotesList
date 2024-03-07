@@ -8,11 +8,11 @@
 import Foundation
 
 protocol NetworkServiceProtocol{
-    func getQuoteByCatery<Request: QuotenRequestProtocol>(_ request: Request, completed: @escaping (Result<Request.Response, QuoteErrors>) -> Void)
+    func request<Request: QuotenRequestProtocol>(_ request: Request, completed: @escaping (Result<Request.Response, QuoteErrors>) -> Void)
 }
 
 final class NetworkService: NetworkServiceProtocol {
-    func getQuoteByCatery<Request>(_ request: Request, completed: @escaping (Result<Request.Response, QuoteErrors>) -> Void) where Request : QuotenRequestProtocol {
+    func request<Request>(_ request: Request, completed: @escaping (Result<Request.Response, QuoteErrors>) -> Void) where Request : QuotenRequestProtocol {
         
         guard let url = URL(string: request.url) else {
             completed(.failure(.invalidParamName))

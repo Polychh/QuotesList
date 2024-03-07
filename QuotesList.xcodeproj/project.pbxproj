@@ -34,6 +34,13 @@
 		36E7A78D2B99B0C70073E6B4 /* CategoryQuoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A78C2B99B0C70073E6B4 /* CategoryQuoteRequest.swift */; };
 		36E7A7902B99B99F0073E6B4 /* BuilderTabBarQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A78F2B99B99F0073E6B4 /* BuilderTabBarQuote.swift */; };
 		36E7A7922B99BED90073E6B4 /* BuilderFavVCFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7912B99BED90073E6B4 /* BuilderFavVCFlow.swift */; };
+		36E7A7942B9A04440073E6B4 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7932B9A04440073E6B4 /* JokeModel.swift */; };
+		36E7A7962B9A04730073E6B4 /* JokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7952B9A04730073E6B4 /* JokeRequest.swift */; };
+		36E7A7982B9A05040073E6B4 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7972B9A05040073E6B4 /* JokeViewController.swift */; };
+		36E7A79A2B9A05180073E6B4 /* JokePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7992B9A05180073E6B4 /* JokePresenter.swift */; };
+		36E7A79E2B9A08E90073E6B4 /* JokesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A79D2B9A08E90073E6B4 /* JokesCell.swift */; };
+		36E7A7A02B9A3F060073E6B4 /* BuilderJokeVCFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A79F2B9A3F060073E6B4 /* BuilderJokeVCFlow.swift */; };
+		36E7A7A22B9A40150073E6B4 /* RouterJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A7A12B9A40150073E6B4 /* RouterJoke.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +73,13 @@
 		36E7A78C2B99B0C70073E6B4 /* CategoryQuoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryQuoteRequest.swift; sourceTree = "<group>"; };
 		36E7A78F2B99B99F0073E6B4 /* BuilderTabBarQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTabBarQuote.swift; sourceTree = "<group>"; };
 		36E7A7912B99BED90073E6B4 /* BuilderFavVCFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderFavVCFlow.swift; sourceTree = "<group>"; };
+		36E7A7932B9A04440073E6B4 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		36E7A7952B9A04730073E6B4 /* JokeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRequest.swift; sourceTree = "<group>"; };
+		36E7A7972B9A05040073E6B4 /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
+		36E7A7992B9A05180073E6B4 /* JokePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokePresenter.swift; sourceTree = "<group>"; };
+		36E7A79D2B9A08E90073E6B4 /* JokesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCell.swift; sourceTree = "<group>"; };
+		36E7A79F2B9A3F060073E6B4 /* BuilderJokeVCFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderJokeVCFlow.swift; sourceTree = "<group>"; };
+		36E7A7A12B9A40150073E6B4 /* RouterJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterJoke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +133,7 @@
 			children = (
 				36E7A7452B960AD90073E6B4 /* QuotesListModel.swift */,
 				36E7A7542B9658FD0073E6B4 /* QuoteModel.swift */,
+				36E7A7932B9A04440073E6B4 /* JokeModel.swift */,
 				36E7A7812B9888630073E6B4 /* FavorQuotes.xcdatamodeld */,
 			);
 			path = Models;
@@ -132,6 +147,7 @@
 				36E7A7322B9609380073E6B4 /* QuotesListViewController.swift */,
 				36E7A7522B96319C0073E6B4 /* QuoteDetailViewController.swift */,
 				36E7A7642B974E760073E6B4 /* FavoritiesViewController.swift */,
+				36E7A7972B9A05040073E6B4 /* JokeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +158,7 @@
 				36E7A7472B9610610073E6B4 /* QuotesListPresenter.swift */,
 				36E7A75E2B9669850073E6B4 /* QuoteDetailPresenter.swift */,
 				36E7A77F2B987EC80073E6B4 /* FavoritiesPresenter.swift */,
+				36E7A7992B9A05180073E6B4 /* JokePresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -152,6 +169,7 @@
 				36E7A78F2B99B99F0073E6B4 /* BuilderTabBarQuote.swift */,
 				36E7A74A2B9613C20073E6B4 /* BuilderMainVCFlow.swift */,
 				36E7A7912B99BED90073E6B4 /* BuilderFavVCFlow.swift */,
+				36E7A79F2B9A3F060073E6B4 /* BuilderJokeVCFlow.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -161,6 +179,7 @@
 			children = (
 				36E7A74D2B9619400073E6B4 /* QuatesListCell.swift */,
 				36E7A77C2B97B1420073E6B4 /* FavoriteCell.swift */,
+				36E7A79D2B9A08E90073E6B4 /* JokesCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -187,6 +206,7 @@
 			children = (
 				36E7A75C2B9661A20073E6B4 /* RouterQuotesList.swift */,
 				36E7A7662B974FD10073E6B4 /* RouterFavorites.swift */,
+				36E7A7A12B9A40150073E6B4 /* RouterJoke.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -203,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				36E7A78C2B99B0C70073E6B4 /* CategoryQuoteRequest.swift */,
+				36E7A7952B9A04730073E6B4 /* JokeRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -290,8 +311,12 @@
 			files = (
 				36E7A7582B9659870073E6B4 /* NetworkService.swift in Sources */,
 				36E7A7552B9658FD0073E6B4 /* QuoteModel.swift in Sources */,
+				36E7A7942B9A04440073E6B4 /* JokeModel.swift in Sources */,
+				36E7A7A02B9A3F060073E6B4 /* BuilderJokeVCFlow.swift in Sources */,
+				36E7A7982B9A05040073E6B4 /* JokeViewController.swift in Sources */,
 				36E7A7532B96319C0073E6B4 /* QuoteDetailViewController.swift in Sources */,
 				36E7A7612B974B8B0073E6B4 /* QuoteTabBarController.swift in Sources */,
+				36E7A7962B9A04730073E6B4 /* JokeRequest.swift in Sources */,
 				36E7A7902B99B99F0073E6B4 /* BuilderTabBarQuote.swift in Sources */,
 				36E7A78D2B99B0C70073E6B4 /* CategoryQuoteRequest.swift in Sources */,
 				36E7A7852B988B7B0073E6B4 /* FavorQuotes.xcdatamodeld in Sources */,
@@ -305,11 +330,14 @@
 				36E7A72F2B9609380073E6B4 /* AppDelegate.swift in Sources */,
 				36E7A7462B960AD90073E6B4 /* QuotesListModel.swift in Sources */,
 				36E7A7482B9610610073E6B4 /* QuotesListPresenter.swift in Sources */,
+				36E7A7A22B9A40150073E6B4 /* RouterJoke.swift in Sources */,
 				36E7A75D2B9661A20073E6B4 /* RouterQuotesList.swift in Sources */,
 				36E7A77E2B987ADA0073E6B4 /* StoreManager.swift in Sources */,
+				36E7A79E2B9A08E90073E6B4 /* JokesCell.swift in Sources */,
 				36E7A7922B99BED90073E6B4 /* BuilderFavVCFlow.swift in Sources */,
 				36E7A7312B9609380073E6B4 /* SceneDelegate.swift in Sources */,
 				36E7A7802B987EC80073E6B4 /* FavoritiesPresenter.swift in Sources */,
+				36E7A79A2B9A05180073E6B4 /* JokePresenter.swift in Sources */,
 				36E7A77D2B97B1420073E6B4 /* FavoriteCell.swift in Sources */,
 				36E7A75F2B9669850073E6B4 /* QuoteDetailPresenter.swift in Sources */,
 				36E7A75A2B965AB20073E6B4 /* QuoteErrors.swift in Sources */,

@@ -17,7 +17,6 @@ protocol QuoteDetailVCProtocol: AnyObject{
 
 protocol QuoteDetailPresenterProtocol{
     var textArray: QuoteByCaregory { get }
-    var isLoaded: Bool { get }
     func starActivityIndicator()
     func saveFavorities()
     func getData()
@@ -26,7 +25,7 @@ protocol QuoteDetailPresenterProtocol{
 
 final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
     var textArray: QuoteByCaregory = .init()
-    var isLoaded: Bool = false
+    private var isLoaded: Bool = false
     
     weak var view: QuoteDetailVCProtocol?
     private let category: String
@@ -62,7 +61,7 @@ final class QuoteDetailPresenter: QuoteDetailPresenterProtocol{
     private func getDataForCategory(category: String){
         isLoaded = false
         let request = CategoryQuoteRequest(category: category)
-        networkService.getQuoteByCatery(request) { [weak self] result in
+        networkService.request(request) { [weak self] result in
             guard let self = self else { return }
             switch result{
             case .success(let result):

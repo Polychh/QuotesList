@@ -85,9 +85,6 @@ extension FavoritiesViewController: UITableViewDelegate, UITableViewDataSource{
           tableView.deleteRows(at: [indexPath], with: .automatic)
       }
     }
-
-    
-  
 }
 
 //MARK: - Set FavoritiesVCProtocol

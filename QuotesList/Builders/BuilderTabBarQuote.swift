@@ -10,6 +10,7 @@ import UIKit
 protocol BulderTabBarProtocol{
     func buildMainVCFlow(nav: UINavigationController) -> UINavigationController
     func buildFavoriteVCFlow(nav: UINavigationController) -> UINavigationController
+    func buildJokeVCFlow(nav: UINavigationController) -> UINavigationController
 }
 
 final class BuilderTabBarQuote: BulderTabBarProtocol{
@@ -25,5 +26,12 @@ final class BuilderTabBarQuote: BulderTabBarProtocol{
         let favoritesRouter = RouterFavorites(navigationController: nav, builder: builder)
         favoritesRouter.createFavoriteVC()
         return favoritesRouter.navigationController
+    }
+    
+    func buildJokeVCFlow(nav: UINavigationController) -> UINavigationController {
+        let builder = BuilderJokeVCFlow()
+        let jokeRouter = RouterJoke(navigationController: nav, builder: builder)
+        jokeRouter.createJokeVC()
+        return jokeRouter.navigationController
     }
 }

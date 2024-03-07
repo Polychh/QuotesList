@@ -148,13 +148,14 @@ extension QuoteDetailViewController: QuoteDetailVCProtocol{
     }
     
     func activityIndicStart() {
-        activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+        }
     }
     
     func activityIndicStop() {
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
         }
-        
     }
 }
