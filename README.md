@@ -4,4 +4,4 @@
 #### Стек технологий: UIKit, MVP, URLSession, CoreData
 
 ---
-![](https://github.com/Polychh/QuotesList/blob/main/QuoteListVideo.gif)
+<img src="https://github.com/Polychh/QuotesList/blob/main/QuoteListVideo.gif" width="400" height="800">
